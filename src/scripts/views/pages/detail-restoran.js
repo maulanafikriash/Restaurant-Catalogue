@@ -10,8 +10,7 @@ const RestaurantDetails = {
     return /* html */`
     
     <div id="restaurant" class="restaurant"></div>
-    <div id="likeButtonContainer"></div>
-          
+    <div id="likeButtonContainer"></div>     
         `;
   },
 
