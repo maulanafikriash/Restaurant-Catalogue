@@ -25,12 +25,12 @@ const RestaurantDetails = {
     LikeButtonSettings.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
-        id: restaurant.id,
-        name: restaurant.name,
-        description: restaurant.description,
-        city: restaurant.city,
-        rating: restaurant.rating,
-        images: restaurant.pictureId,
+        id: resto.id,
+        name: resto.name,
+        description: resto.description,
+        city: resto.city,
+        rating: resto.rating,
+        pictureId: resto.pictureId,
       },
     });
   },
