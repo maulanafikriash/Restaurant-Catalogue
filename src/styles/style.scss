@@ -1,0 +1,423 @@
+$primary-color: #333;
+$flexible: flex;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  display: inline-block; 
+  width: 60px;
+  height: 44px;
+}
+
+.navbar {
+  background-color: $primary-color;
+  color: #fff;
+  padding-top: 20px ;
+}
+
+.hero img {
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover; 
+}
+
+.hero-text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -350%);
+  padding: 20px;
+  color: white;
+  text-align: center;
+  h1 {
+  margin: 0;
+  font-size: 47px;
+  font-family: 'Quicksand';
+  text-shadow: 5px 4px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.container {
+  display: $flexible;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 24px;
+  padding-left: 30px;
+  padding-bottom: 25px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+  padding-bottom: 25px; 
+
+  &.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  &.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+.menu {
+ ul {
+   list-style: none;
+   display: $flexible;
+ }
+ li {
+   padding-right: 50px;
+ }
+ a {
+   text-decoration: none;
+   color: #fff;
+   font-weight: bold;
+   transition: font-size 0.3s ease;
+ }
+}
+
+.menu ul li a:hover {
+  font-size: 1.2em; 
+}
+  
+.restaurant-list h2 {
+  margin-top: 0px ;
+  text-align: center;
+}
+
+// main
+
+.content {
+  padding: 32px;
+  flex: 1;
+  margin: 0 auto;
+  min-height: 100%;
+
+  &-heading {
+    text-align: center;
+  }
+}
+
+// restaurant
+.resto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin: 32px 0;
+}
+
+ 
+// .restaurant-item {
+//   list-style: none;
+//   padding: 55px;
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr); 
+//   gap: 25px; 
+//   li {
+//    background-color: #f9f9f9;
+//    padding: 15px;
+//    border-radius: 5px;
+//    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//   }
+//   img {
+//     max-width: 100%;
+//     height: auto;
+//     border-radius: 5px;
+//   }
+//   h3 {
+//    font-size: 1.2rem;
+//    margin-top: 10px;
+//   }
+//   p {
+//    margin: 5px 0;
+//    padding: 5px 15px;
+//   }
+// }
+
+// Resto Item
+.restaurant-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__header {
+    position: relative;
+
+    &__poster {
+      width: 100%;
+    }
+
+    &__rating {
+      position: absolute;
+      padding: 8px;
+      bottom: 20px;
+      left: 0;
+      display: inline-block;
+      background-color: black;
+      color: white;
+
+      &__score {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 16px;
+
+    h3 {
+      margin: 0 0 10px 0;
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        display: inline;
+      }
+    }
+
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      margin: 0 0 10px 0;   
+      i{
+        display: inline;
+        color: $primary-color;     
+      }
+    }
+  }
+}
+
+// Restaurant-detail
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+  padding: 22px;
+
+  &__poster {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+
+  &__info {
+    h4 {
+      margin: 8px 0;
+    }
+  }
+}
+
+/* Style for restaurant title */
+// .restaurant-title {
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+// }
+
+// /* Style for restaurant image */
+// .restaurant-image {
+//   max-width: 100%; /* Agar gambar terlihat responsif */
+//   height: auto;
+//   margin-bottom: 10px;
+// }
+
+// /* Style for restaurant info */
+// .restaurant-info {
+//   margin-bottom: 20px;
+  
+//   h3 {
+//     font-size: 18px;
+//     font-weight: bold;
+//   }
+
+//   h4 {
+//     font-size: 16px;
+//     font-weight: bold;
+//     margin-top: 10px;
+//   }
+
+//   p {
+//     font-size: 16px;
+//   }
+// }
+
+// /* Style for restaurant description */
+// .restaurant-description {
+//   margin-bottom: 20px;
+  
+//   h3 {
+//     font-size: 18px;
+//     font-weight: bold;
+//   }
+
+//   p {
+//     font-size: 16px;
+//   }
+// }
+
+
+// .restaurant {
+//   .restaurant-title,
+//   .restaurant-description {
+//     grid-column: 1 / 3; // Menggabungkan grid-column-start dan grid-column-end
+//   }
+// }
+
+
+/* Style for the restaurant detail section */
+// .restaurant-detail {
+//   background-color: #f9f9f9;
+//   padding: 20px;
+
+//   img {
+//       max-width: 100%;
+//       height: auto;
+//       border-radius: 8px;
+//       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   }
+
+//   .restaurant-name {
+//       font-size: 24px;
+//       margin: 10px 0;
+//   }
+
+//   .detail-rating {
+//       font-size: 16px;
+//       color: #f39c12;
+//   }
+
+//   .container-detail__location {
+//       font-size: 16px;
+//       color: #333;
+//   }
+
+//   /* Style for the "Tentang Restoran" section */
+//   .title-content {
+//       font-size: 20px;
+//       margin-top: 20px;
+//       margin-bottom: 10px;
+//   }
+
+//   /* Style for the description */
+//   .main-content-block {
+//       p {
+//           font-size: 16px;
+//           line-height: 1.4;
+//           color: #666;
+//       }
+//   }
+// }
+
+
+.like {
+  width: 55px;
+  height: 55px;
+  background-color: #e81717;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: fixed;
+  border-radius: 50%;
+  bottom: 16px;
+  right: 16px;
+  border: 0; 
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+#about-us {
+  margin-top: 40px; 
+  text-align: center;
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
+
+.icons i {
+  color: #333;
+  margin: 0 15px;
+  padding: 18px 0;
+}
+
+:focus {
+  outline: 2px solid #007bff; 
+}
+
+.hide-focus:focus {
+  outline: none;
+}
+
+.skip-link {
+  background-color: #000;
+  position: absolute;
+  display: inline;
+  font-size: 11px;
+  top: -40px;
+  left: 0;
+  color: #fff;
+  padding: 7px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+  &:focus {
+    top: 0;
+    opacity: 1;  
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  padding: 10px 0;
+  // position: fixed;
+  // bottom: 0;
+  // width: 100%;
+  p {
+    color: #fff;
+    text-align: center;
+  } 
+}
+
