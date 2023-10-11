@@ -222,6 +222,8 @@ a {
   }
 }
 
+
+
 // Restaurant-detail
 .restaurant {
   margin: 0 auto;
@@ -306,6 +308,61 @@ a {
     }
   }
 }
+
+// Form review
+.form-review {
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 22px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Style the form header */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Style the form labels */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* Style the input and textarea fields */
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Style the submit button */
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* Style the submit button on hover */
+    &:hover {
+      background-color: black;
+    }
+  }
+}
+
 
 /* Style for restaurant title */
 // .restaurant-title {

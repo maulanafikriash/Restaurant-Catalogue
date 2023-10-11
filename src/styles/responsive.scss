@@ -36,7 +36,7 @@ $flexible: flex;
     }  
   }
 
-@media screen and (min-width: 658px) {
+@media screen and (min-width: 720px) {
   .restaurant {
     grid-template-columns: auto 1fr;
     .restaurant__title,
@@ -45,7 +45,7 @@ $flexible: flex;
     }
   }
   .content{
-    padding: 25px;
+    padding: 22px;
   }
   
   .resto {
