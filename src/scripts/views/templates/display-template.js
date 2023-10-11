@@ -1,5 +1,14 @@
 import CONFIG from '../../globals/config';
 
+const listMenu = (items) => {
+  // eslint-disable-next-line no-shadow
+  let listMenu = '';
+  items.forEach((item) => {
+    listMenu += `<li>${item.name}</li>`;
+  });
+  return listMenu;
+};
+
 const createRestaurantItemTemplate = (restaurant) => /* html */ `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
@@ -31,6 +40,31 @@ const createRestaurantDetailTemplate = (restaurant) => /* html */ `
     <h3>Tentang Restoran</h3>
     <p>${restaurant.description}</p>
   </div>
+
+ <div class="restaurant__menu">
+  <h3>Menu Restoran</h3>
+  <h4>Foods</h4>
+    <ul>
+    ${listMenu(restaurant.menus.foods)}
+    </ul>
+    <h4>Drinks</h4>
+      <ul>
+        ${listMenu(restaurant.menus.drinks)}
+      </ul>
+  </div>
+
+  <div class="customer-review">
+  <h3>Customer Review</h3>
+  ${restaurant.customerReviews.map((customerReviews) => /* html */`                        
+  <div class="customer-review__container">
+      <h4 tabindex="0">${customerReviews.name}</h4>
+      <p tabindex="0">${customerReviews.date}</p>
+      <p tabindex="0">${customerReviews.review}</p>
+  </div>
+`).join('')}
+  </div>
+
+  
 `;
 
 const createLikeButtonTemplate = () => /* html */`
