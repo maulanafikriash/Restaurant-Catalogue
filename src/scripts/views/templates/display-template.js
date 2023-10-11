@@ -64,6 +64,21 @@ const createRestaurantDetailTemplate = (restaurant) => /* html */ `
 `).join('')}
   </div>
 
+  <!-- Form submit menu-->
+  <form id="review-form" class="form-review">
+  <h2>Buat Review</h2>
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="date">Tanggal Review:</label>
+      <input type="text" id="date" name="date" required placeholder="13 November 2019">
+
+      <label for="review">Review:</label>
+      <textarea id="review" name="review" rows="4" required></textarea>
+
+      <button type="submit">Kirim</button>
+  </form>
+
   
 `;
 
