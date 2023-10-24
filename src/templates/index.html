@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="MenuMaestro-Restaurant">
-  <meta name="theme-color" content="#333"/>
+  <meta name="theme-color" content="#333" />
   <title>Katalog Restoran</title>
 
   <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
@@ -16,60 +16,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Roboto:wght@500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- <script src="https://use.fontawesome.com/b070c8f1df.js"></script> -->
 </head>
 
 <body>
-  <header class="wrapper">
+  <header>
     <a href="#main-content" class="skip-link">Skip to Content</a>
     <div class="navbar">
-      <div class="container">
-        <h1 class="brand" tabindex="0">Menu Maestro</h1>
-        <nav id="menu-drawer" class="menu">
-          <ul>
-            <li><a href="#/daftar-restoran" tabindex="0">Home</a></li>
-            <li><a href="#/favorite" tabindex="0">Favorite</a></li>
-            <li><a href="#about-us" tabindex="0">AboutUs</a></li>
-          </ul>
-        </nav>
-        <button id="hamburger-button"  class="mobile-menu-toggle">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </button>
-      </div>
+      <menu-maestro></menu-maestro>
     </div>
   </header>
 
-  <main id="main-content">
-    <!-- <section class="hero">
-      <img src="./images/heros/hero-image_4.jpg" alt="Gambar Makanan Restoran">
-      <div class="hero-text">
-        <h1>Welcome...</h1>
-      </div>
-    </section> -->
+  <loading-indicator></loading-indicator>
+  <div id="mycontent" class="hidden">
+    <main tabindex="0" id="main-content"></main>
+    <about-us></about-us>
+    <footer>
+      <p tabindex="0">copyright &copy; 2023 - Menu Maestro</p>
+    </footer>
+  </div>
 
-    <!-- <section class="restaurant-list">
-      <h2 tabindex="0" id="main-contents">Daftar Restoran</h2>
-      <ul id="restaurant-list"></ul>
-    </section> -->
-  </main>
-
-  <section id="about-us">
-    <h2 tabindex="0">About Us</h2>
-    <p>Follow me on social media </p>
-    <div class="icons">
-      <a href="https://github.com/maulanafikriash" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.instagram.com/maulanafikri.ash/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/maulana-fikri-ash-shidiq-63749227b/" target="_blank"><i
-          class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </section>
-
-  <footer>
-    <p>copyright &copy; 2023 - Menu Maestro</p>
-  </footer>
+  <div id="error-notification" class="hidden">
+    Error: Halaman gagal dimuat.
+  </div>
 
 </body>
 

@@ -11,11 +11,11 @@ const RestaurantList = {
         </div>
     </section>
 
-    <div class="content">
-      <h2 class="content-heading">Daftar Restoran</h2>
+    <div class="content" >
+      <h2 tabindex="0" class="content-heading">Daftar Restoran</h2>
       <div id="restaurant" class="resto"></div>
     </div>
-
+    
       `;
   },
 

@@ -1,5 +1,6 @@
 $primary-color: #333;
 $flexible: flex;
+$min-touch-target-size: 44px;
 
 @media screen and (max-width: 768px) {
     .menu {
@@ -26,14 +27,33 @@ $flexible: flex;
             margin: 2px 0;
             padding: 5px 17px;
         }
+        
     }
 
     .resto {
       grid-template-columns: 1fr 1fr;
     }
+
     .content{
-      padding: 25px;
+      padding: 22px;
     }  
+
+    .aboutUs {
+      margin-top: 25%;
+      margin-bottom: 2%;
+    }
+
+    button, a, input[type="text"], textarea {
+      min-width: $min-touch-target-size;
+      min-height: $min-touch-target-size;
+    }
+
+    .navbar {
+      background-color: $primary-color;
+      color: #fff;
+      padding: 17px 17px;
+    }
+    
   }
 
 @media screen and (min-width: 720px) {
@@ -52,18 +72,11 @@ $flexible: flex;
     grid-template-columns: 1fr 1fr;
   }
 
+  .form-review {
+    padding: 22px;
+  }
+
 }
-
-/* Responsive */
-
-// .wrapper {
-//   &brand {
-//       @media screen and (min-width: 800px) {
-//         font-size: 2em;
-//      }
-//   }
-// }
-
 
 @media (max-width: 2560px) {
     .resto {

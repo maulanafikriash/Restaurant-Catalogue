@@ -1,9 +1,12 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/style.scss';
 import '../styles/responsive.scss';
+import './views/templates/menu-maestro';
+import './views/templates/about-us';
+import './views/templates/loading-indicator';
+import './main';
 import Apps from './views/app';
 import swRegister from './utils/sw-register';
-// import main from './main';
 
 const app = new Apps({
   button: document.querySelector('#hamburger-button'),
@@ -19,5 +22,3 @@ window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
-
-// document.addEventListener('DOMContentLoaded', main);

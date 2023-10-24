@@ -12,49 +12,49 @@ const listMenu = (items) => {
 const createRestaurantItemTemplate = (restaurant) => /* html */ `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
-      <img class="restaurant-item__header__poster" alt="${restaurant.name}"
+      <img tabindex="0" class="restaurant-item__header__poster" alt="${restaurant.name}"
            src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}">
       <div class="restaurant-item__header__rating">
-        <p>⭐️<span class="restaurant-item-header__rating__score">${restaurant.rating}</span></p>
+        <p tabindex="0">⭐️<span class="restaurant-item-header__rating__score">${restaurant.rating}</span></p>
       </div>
     </div>
     <div class="restaurant-item__content">
       <h3><a href="/#/detail-restoran/${restaurant.id}">${restaurant.name}</a></h3>
-      <p><i class="fa-solid fa-location-dot"></i> ${restaurant.city}</p>
-      <p>${restaurant.description}</p>
+      <h4 tabindex="0"><i class="fa-solid fa-location-dot"></i> ${restaurant.city}</h4>
+      <p tabindex="0">${restaurant.description}</p>
     </div>
   </div>
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => /* html */ `
-  <h2 class="restaurant__title">${restaurant.name}</h2>
-  <img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}" alt="${restaurant.name}" />
+  <h2 tabindex="0" class="restaurant__title">${restaurant.name}</h2>
+  <img tabindex="0" class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}" alt="${restaurant.name}" />
   <div class="restaurant__info">
-    <h3>Informasi</h3>
-    <h4>Kota</h4>
-    <p><i class="fa-solid fa-location-dot"></i> ${restaurant.city}</p>
-    <h4>Rating</h4>
-    <p>⭐️ ${restaurant.rating}</p>
+    <h3 tabindex="0">Informasi</h3>
+    <h4 tabindex="0">Kota</h4>
+    <p tabindex="0"><i class="fa-solid fa-location-dot"></i> ${restaurant.city}</p>
+    <h4 tabindex="0">Rating</h4>
+    <p tabindex="0">⭐️ ${restaurant.rating}</p>
   </div>
   <div class="restaurant__description">
-    <h3>Tentang Restoran</h3>
-    <p>${restaurant.description}</p>
+    <h3 tabindex="0">Tentang Restoran</h3>
+    <p tabindex="0">${restaurant.description}</p>
   </div>
 
  <div class="restaurant__menu">
-  <h3>Menu Restoran</h3>
-  <h4>Foods</h4>
-    <ul>
+  <h3 tabindex="0">Menu Restoran</h3>
+  <h4 tabindex="0">Foods</h4>
+    <ul tabindex="0">
     ${listMenu(restaurant.menus.foods)}
     </ul>
-    <h4>Drinks</h4>
-      <ul>
+    <h4 tabindex="0">Drinks</h4>
+      <ul tabindex="0">
         ${listMenu(restaurant.menus.drinks)}
       </ul>
   </div>
 
   <div class="customer-review">
-  <h3>Customer Review</h3>
+  <h3 tabindex="0">Customer Review</h3>
   ${restaurant.customerReviews.map((customerReviews) => /* html */`                        
   <div class="customer-review__container">
       <h4 tabindex="0">${customerReviews.name}</h4>
@@ -62,34 +62,18 @@ const createRestaurantDetailTemplate = (restaurant) => /* html */ `
       <p tabindex="0">${customerReviews.review}</p>
   </div>
 `).join('')}
+  <div id="post-review"></div>
   </div>
-
-  <!-- Form submit menu-->
-  <form id="review-form" class="form-review">
-  <h2>Buat Review</h2>
-      <label for="name">Nama:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="date">Tanggal Review:</label>
-      <input type="text" id="date" name="date" required placeholder="13 November 2019">
-
-      <label for="review">Review:</label>
-      <textarea id="review" name="review" rows="4" required></textarea>
-
-      <button type="submit">Kirim</button>
-  </form>
-
-  
 `;
 
-const createLikeButtonTemplate = () => /* html */`
-  <button aria-label="like this restaurant" id="likeButton" class="like">
+const createLikeRestaurantButtonTemplate = () => /* html */`
+  <button tabindex="0" aria-label="like this restaurant" id="likeButton" class="like">
   <i class="fa-regular fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => /* html */`
-  <button aria-label="unlike this restaurant" id="likeButton" class="like">
+const createUnlikeRestaurantButtonTemplate = () => /* html */`
+  <button tabindex="0" aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
@@ -97,6 +81,6 @@ const createLikedButtonTemplate = () => /* html */`
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };
